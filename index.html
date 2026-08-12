@@ -203,80 +203,106 @@
 
 
         <!--
-          - service
+          - core competencies
         -->
 
-        <section class="service">
+        <section class="competencies">
 
-          <h3 class="h3 service-title">What I'm doing</h3>
+          <h3 class="h3 service-title">Core Competencies</h3>
 
-          <ul class="service-list">
+          <style>
+            .competency-grid {
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              gap: 16px;
+              margin-top: 20px;
+            }
 
-            <li class="service-item">
+            @media (max-width: 900px) {
+              .competency-grid {
+                grid-template-columns: 1fr;
+              }
+            }
 
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-design.svg" alt="process analysis icon" width="40">
+            .competency-card {
+              padding: 22px;
+              border: 1px solid hsla(0, 0%, 100%, 0.12);
+              border-radius: 16px;
+              background: hsl(240, 2%, 22%);
+            }
+
+            .competency-icon {
+              width: 48px;
+              height: 48px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 12px;
+              font-size: 22px;
+              margin-bottom: 16px;
+            }
+
+            .competency-icon.green { background: hsla(150, 60%, 55%, 0.15); color: hsl(150, 60%, 55%); }
+            .competency-icon.blue { background: hsla(210, 90%, 65%, 0.15); color: hsl(210, 90%, 65%); }
+            .competency-icon.purple { background: hsla(265, 70%, 65%, 0.15); color: hsl(265, 70%, 65%); }
+
+            .competency-card h4 {
+              font-size: var(--fs-5, 16px);
+              color: var(--white-2);
+              margin-bottom: 14px;
+            }
+
+            .competency-tags {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 8px;
+            }
+
+            .competency-tags span {
+              padding: 6px 12px;
+              font-size: 12.5px;
+              color: var(--light-gray-70);
+              border: 1px solid hsla(0, 0%, 100%, 0.1);
+              border-radius: 8px;
+            }
+          </style>
+
+          <div class="competency-grid">
+
+            <div class="competency-card">
+              <div class="competency-icon green"><ion-icon name="cube-outline"></ion-icon></div>
+              <h4>Supply Chain &amp; Operations</h4>
+              <div class="competency-tags">
+                <span>Inventory Classification (ABC)</span>
+                <span>OMH / Material Handling Cost Analysis</span>
+                <span>Warehouse Layout Optimization</span>
+                <span>PPIC</span>
               </div>
+            </div>
 
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Process Analysis</h4>
-
-                <p class="service-item-text">
-                  Analyzing operational processes to identify inefficiencies and improvement opportunities.
-                </p>
+            <div class="competency-card">
+              <div class="competency-icon blue"><ion-icon name="settings-outline"></ion-icon></div>
+              <h4>Quality &amp; Process Improvement</h4>
+              <div class="competency-tags">
+                <span>Lean Six Sigma</span>
+                <span>DMAIC Methodology</span>
+                <span>Root Cause Analysis (FMEA)</span>
+                <span>Quality Control</span>
               </div>
+            </div>
 
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="data analysis icon" width="40">
+            <div class="competency-card">
+              <div class="competency-icon purple"><ion-icon name="bar-chart-outline"></ion-icon></div>
+              <h4>Data &amp; Statistical Analysis</h4>
+              <div class="competency-tags">
+                <span>Microsoft Excel</span>
+                <span>Minitab</span>
+                <span>IBM SPSS</span>
+                <span>PLS-SEM</span>
               </div>
+            </div>
 
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Data Analysis</h4>
-
-                <p class="service-item-text">
-                  Working with data using Excel, Minitab, and SPSS to support evidence-based decisions.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-app.svg" alt="quality management icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Quality Management</h4>
-
-                <p class="service-item-text">
-                  Applying Lean Six Sigma and root cause analysis (FMEA) to minimize defects and waste.
-                </p>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-photo.svg" alt="inventory planning icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Inventory Planning</h4>
-
-                <p class="service-item-text">
-                  Classifying inventory and analyzing material handling costs to optimize warehouse operations.
-                </p>
-              </div>
-
-            </li>
-
-          </ul>
+          </div>
 
         </section>
 
@@ -306,22 +332,132 @@
             <h3 class="h3">Education</h3>
           </div>
 
-          <ol class="timeline-list">
+          <style>
+            .edu-card {
+              position: relative;
+              padding: 24px;
+              border: 1px solid hsla(0, 0%, 100%, 0.1);
+              border-radius: 16px;
+              background: hsl(240, 2%, 13%);
+              margin-top: 20px;
+            }
 
-            <li class="timeline-item">
+            .edu-card-top {
+              display: flex;
+              align-items: flex-start;
+              justify-content: space-between;
+              margin-bottom: 16px;
+            }
 
-              <h4 class="h4 timeline-item-title">Universitas Sebelas Maret</h4>
+            .edu-icon-box {
+              width: 48px;
+              height: 48px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background: hsla(150, 60%, 55%, 0.15);
+              border-radius: 12px;
+              color: hsl(150, 60%, 55%);
+              font-size: 24px;
+            }
 
-              <span>Aug 2022 — Aug 2026</span>
+            .edu-gpa-badge {
+              display: flex;
+              align-items: center;
+              gap: 6px;
+              padding: 6px 14px;
+              border: 1px solid hsla(0, 0%, 100%, 0.1);
+              border-radius: 20px;
+              font-size: 13px;
+              color: var(--light-gray-70);
+            }
 
-              <p class="timeline-text">
-                Bachelor of Industrial Engineering, GPA 3.53/4.00. Thesis: "Capability Analysis of
-                Newspaper Production to Minimize Defects Using the DMAIC Approach at PT Solo Grafika Utama."
-              </p>
+            .edu-gpa-badge .dot {
+              width: 7px;
+              height: 7px;
+              border-radius: 50%;
+              background: hsl(150, 60%, 55%);
+              display: inline-block;
+            }
 
-            </li>
+            .edu-card h4 {
+              font-size: var(--fs-3, 20px);
+              color: var(--white-2);
+              margin-bottom: 6px;
+            }
 
-          </ol>
+            .edu-card .edu-major {
+              color: hsl(150, 60%, 55%);
+              font-weight: 500;
+              margin-bottom: 4px;
+            }
+
+            .edu-card .edu-date {
+              display: flex;
+              align-items: center;
+              gap: 6px;
+              font-size: 13px;
+              color: var(--light-gray-70);
+              margin-bottom: 16px;
+            }
+
+            .edu-divider {
+              height: 1px;
+              background: hsla(0, 0%, 100%, 0.1);
+              margin-bottom: 16px;
+            }
+
+            .edu-thesis-label {
+              display: flex;
+              align-items: center;
+              gap: 6px;
+              font-size: 12px;
+              letter-spacing: 0.5px;
+              text-transform: uppercase;
+              color: var(--light-gray-70);
+              margin-bottom: 8px;
+            }
+
+            .edu-card .edu-thesis-text {
+              font-size: var(--fs-6);
+              color: var(--light-gray, #d1d1d1);
+              font-style: italic;
+              line-height: 1.6;
+            }
+          </style>
+
+          <div class="edu-card">
+
+            <div class="edu-card-top">
+              <div class="edu-icon-box">
+                <ion-icon name="school-outline"></ion-icon>
+              </div>
+
+              <div class="edu-gpa-badge">
+                <span class="dot"></span> GPA 3.53 / 4.00
+              </div>
+            </div>
+
+            <h4>Universitas Sebelas Maret</h4>
+            <p class="edu-major">Bachelor of Industrial Engineering</p>
+
+            <div class="edu-date">
+              <ion-icon name="calendar-outline"></ion-icon>
+              Aug 2022 — Expected Grad: Aug 2026
+            </div>
+
+            <div class="edu-divider"></div>
+
+            <div class="edu-thesis-label">
+              <ion-icon name="bookmark-outline"></ion-icon> Thesis
+            </div>
+
+            <p class="edu-thesis-text">
+              "Capability Analysis of Newspaper Production to Minimize Defects Using the
+              DMAIC Approach at PT Solo Grafika Utama"
+            </p>
+
+          </div>
 
         </section>
 
@@ -494,7 +630,7 @@
         - #PORTFOLIO
       -->
 
-      <article class="portfolio" data-page="portfolio">
+      <article class="portfolio" data-page="project experience">
 
         <header>
           <h2 class="h2 article-title">Project Experience</h2>
@@ -789,6 +925,27 @@
     </div>
 
   </main>
+
+  <!--
+    - hidden placeholders required by script.js so it doesn't error out
+    - (these elements were part of removed sections, but the script still
+    - looks for them — kept here invisibly so navigation keeps working)
+  -->
+  <div style="display: none;">
+
+    <div data-modal-container>
+      <div data-overlay></div>
+      <button data-modal-close-btn></button>
+      <img data-modal-img>
+      <p data-modal-title></p>
+      <div data-modal-text></div>
+    </div>
+
+    <button data-select>
+      <div data-selecct-value></div>
+    </button>
+
+  </div>
 
 
 
