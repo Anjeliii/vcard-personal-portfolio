@@ -23,6 +23,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!--
+    - override outer background color
+  -->
+  <style>
+    html, body {
+      background-color: #FCD5CE !important;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -112,7 +121,7 @@
         <ul class="social-list">
 
           <li class="social-item">
-            <a href="https://www.linkedin.com/in/mutiara-anjeli-aldrin-86352b25a" target="_blank" class="social-link">
+            <a href="https://www.linkedin.com/in/mutiaraanjelia" target="_blank" class="social-link">
               <ion-icon name="logo-linkedin"></ion-icon>
             </a>
           </li>
@@ -897,28 +906,65 @@
           <h2 class="h2 article-title">Contact</h2>
         </header>
 
-        <section class="contact-form">
+        <style>
+          .cv-download-box {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 32px;
+            border: 1px solid hsla(0, 0%, 100%, 0.1);
+            border-radius: 16px;
+            background: hsl(240, 2%, 18%);
+            margin-top: 20px;
+          }
 
-          <h3 class="h3 form-title">Contact Form</h3>
+          .cv-download-box h3 {
+            font-size: var(--fs-3, 20px);
+            color: var(--white-2);
+          }
 
-          <form action="#" class="form" data-form>
+          .cv-download-box p {
+            font-size: var(--fs-6);
+            color: var(--light-gray-70);
+            line-height: 1.6;
+            max-width: 480px;
+          }
 
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+          .cv-download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            border-radius: 12px;
+            background: var(--orange-yellow-crayola);
+            color: var(--eerie-black-1, #131316);
+            font-weight: 600;
+            font-size: var(--fs-6);
+            text-decoration: none;
+            margin-top: 4px;
+          }
 
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-            </div>
+          .cv-download-btn ion-icon {
+            font-size: 18px;
+          }
+        </style>
 
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+        <div class="cv-download-box">
 
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
+          <h3>Download My CV</h3>
 
-          </form>
+          <p>
+            Get a full copy of my CV in PDF format, including detailed work experience,
+            education, skills, and certifications.
+          </p>
 
-        </section>
+          <a href="https://drive.google.com/uc?export=download&id=1B6M3RSGxi45FOZRZWLSsoJTtW3MBE_zk" target="_blank" class="cv-download-btn">
+            <ion-icon name="download-outline"></ion-icon>
+            <span>Download CV</span>
+          </a>
+
+        </div>
 
       </article>
 
