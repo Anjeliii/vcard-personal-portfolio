@@ -31,8 +31,8 @@
   -->
   <style>
     :root {
-      /* surfaces - original dark gray panels on a soft blush page */
-      --smoky-black: #F9EAE6;
+      /* surfaces - original dark gray panels on a soft pink page */
+      --smoky-black: #E9E5E1;
       --eerie-black-1: hsl(240, 2%, 13%);
       --eerie-black-2: hsl(240, 2%, 12%);
       --onyx: hsl(240, 1%, 17%);
@@ -65,7 +65,7 @@
     }
 
     html, body {
-      background-color: #F9EAE6 !important;
+      background-color: #E9E5E1 !important;
     }
 
     /* navbar has a hard-coded tint in style.css */
@@ -86,6 +86,19 @@
     ::-webkit-scrollbar-button { background: hsl(0, 0%, 20%) !important; }
 
     .separator { background: hsla(0, 0%, 100%, 0.12) !important; }
+
+    /* direct CV link in the navbar */
+    .navbar-cv {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--orange-yellow-crayola) !important;
+      text-decoration: none;
+    }
+
+    .navbar-cv ion-icon { font-size: 15px; }
+
+    .navbar-cv:hover { color: #F3C4BC !important; }
 
     .sidebar, .main-content article {
       border-color: hsla(0, 0%, 100%, 0.12) !important;
@@ -264,7 +277,11 @@
           </li>
 
           <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Download CV</button>
+            <a href="https://drive.google.com/uc?export=download&amp;id=1B6M3RSGxi45FOZRZWLSsoJTtW3MBE_zk"
+               target="_blank" rel="noopener" class="navbar-link navbar-cv">
+              <ion-icon name="download-outline"></ion-icon>
+              <span>Download CV</span>
+            </a>
           </li>
 
         </ul>
@@ -1216,79 +1233,6 @@
 
 
 
-      <!--
-        - #CONTACT
-      -->
-
-      <article class="contact" data-page="download cv">
-
-        <header>
-          <h2 class="h2 article-title">Download CV</h2>
-        </header>
-
-        <style>
-          .cv-download-box {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 14px;
-            padding: 32px;
-            border: 1px solid hsla(0, 0%, 100%, 0.12);
-            border-radius: 16px;
-            background: hsl(240, 2%, 18%);
-            margin-top: 20px;
-          }
-
-          .cv-download-box h3 {
-            font-size: var(--fs-3, 20px);
-            color: var(--white-2);
-          }
-
-          .cv-download-box p {
-            font-size: var(--fs-6);
-            color: var(--light-gray-70);
-            line-height: 1.6;
-            max-width: 480px;
-          }
-
-          .cv-download-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px 24px;
-            border-radius: 12px;
-            background: var(--orange-yellow-crayola);
-            color: #F5F5F7;
-            font-weight: 600;
-            font-size: var(--fs-6);
-            text-decoration: none;
-            margin-top: 4px;
-          }
-
-          .cv-download-btn:hover { background: #D68E84; }
-
-          .cv-download-btn ion-icon {
-            font-size: 18px;
-          }
-        </style>
-
-        <div class="cv-download-box">
-
-          <h3>Download My CV</h3>
-
-          <p>
-            Get a full copy of my CV in PDF format, including detailed work experience,
-            education, skills, and certifications.
-          </p>
-
-          <a href="https://drive.google.com/uc?export=download&id=1B6M3RSGxi45FOZRZWLSsoJTtW3MBE_zk" target="_blank" class="cv-download-btn">
-            <ion-icon name="download-outline"></ion-icon>
-            <span>Download CV</span>
-          </a>
-
-        </div>
-
-      </article>
 
     </div>
 
