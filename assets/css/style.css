@@ -1880,3 +1880,17 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
+
+/*-----------------------------------*\
+  #AVATAR OVERRIDE
+\*-----------------------------------*/
+
+@media (min-width: 580px) {
+  .avatar-box { padding: 8px; }
+  .avatar-box img { width: 130px; }
+}
+
+@media (min-width: 1250px) {
+  .avatar-box { padding: 12px; }
+  .avatar-box img { width: 175px; }
+}
