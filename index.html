@@ -31,59 +31,89 @@
   -->
   <style>
     :root {
-      /* surfaces - neutral gray panels on a soft pink page */
+      /* surfaces - original dark gray panels on a soft pink page */
       --smoky-black: #FCD5CE;
-      --eerie-black-1: #EFEFF1;
-      --eerie-black-2: #E9E9EC;
-      --onyx: #E3E3E7;
-      --jet: #D2D2D8;
+      --eerie-black-1: hsl(240, 2%, 13%);
+      --eerie-black-2: hsl(240, 2%, 12%);
+      --onyx: hsl(240, 1%, 17%);
+      --jet: hsl(0, 0%, 22%);
 
       /* text */
-      --white-1: #2E2E33;
-      --white-2: #26262A;
-      --light-gray: #55555E;
-      --light-gray-70: rgba(85, 85, 94, 0.85);
+      --white-1: hsl(0, 0%, 100%);
+      --white-2: hsl(0, 0%, 98%);
+      --light-gray: hsl(0, 0%, 84%);
+      --light-gray-70: hsla(0, 0%, 84%, 0.7);
 
-      /* accent */
-      --orange-yellow-crayola: #B85C57;
-      --vegas-gold: #A8524D;
-      --bittersweet-shimmer: #A8524D;
+      /* accent - light rose so it reads on dark panels */
+      --orange-yellow-crayola: #E8A79E;
+      --vegas-gold: #D68E84;
+      --bittersweet-shimmer: #C9736A;
 
       /* gradients */
-      --bg-gradient-onyx: linear-gradient(to bottom right, #F4F4F6 3%, #E2E2E7 97%);
-      --bg-gradient-jet: linear-gradient(to bottom right, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 59.86%);
-      --bg-gradient-yellow-1: linear-gradient(to bottom right, #C97C77 0%, rgba(201, 124, 119, 0) 50%);
-      --bg-gradient-yellow-2: linear-gradient(135deg, rgba(184, 92, 87, 0.22) 0%, rgba(184, 92, 87, 0) 59.86%);
-      --border-gradient-onyx: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 50%);
-      --text-gradient-yellow: linear-gradient(to right, #B85C57, #C98A80);
+      --bg-gradient-onyx: linear-gradient(to bottom right, hsl(240, 1%, 25%) 3%, hsl(0, 0%, 19%) 97%);
+      --bg-gradient-jet: linear-gradient(to bottom right, hsla(240, 1%, 18%, 0.251) 0%, hsla(240, 2%, 11%, 0) 59.86%);
+      --bg-gradient-yellow-1: linear-gradient(to bottom right, #E8A79E 0%, rgba(232, 167, 158, 0) 50%);
+      --bg-gradient-yellow-2: linear-gradient(135deg, rgba(232, 167, 158, 0.25) 0%, rgba(232, 167, 158, 0) 59.86%);
+      --border-gradient-onyx: linear-gradient(to bottom right, hsl(0, 0%, 25%) 0%, hsla(0, 0%, 25%, 0) 50%);
+      --text-gradient-yellow: linear-gradient(to right, #E8A79E, #D68E84);
 
-      --shadow-1: 0 8px 20px rgba(90, 70, 68, 0.12);
-      --shadow-2: 0 10px 24px rgba(90, 70, 68, 0.14);
-      --shadow-3: 0 12px 28px rgba(90, 70, 68, 0.14);
-      --shadow-4: 0 14px 32px rgba(90, 70, 68, 0.16);
-      --shadow-5: 0 16px 36px rgba(90, 70, 68, 0.18);
+      --shadow-1: 0 8px 20px hsla(0, 0%, 0%, 0.25);
+      --shadow-2: 0 10px 24px hsla(0, 0%, 0%, 0.25);
+      --shadow-3: 0 12px 28px hsla(0, 0%, 0%, 0.25);
+      --shadow-4: 0 14px 32px hsla(0, 0%, 0%, 0.25);
+      --shadow-5: 0 16px 36px hsla(0, 0%, 0%, 0.25);
     }
 
     html, body {
       background-color: #FCD5CE !important;
-      color: var(--light-gray);
     }
 
-    /* navbar has a hard-coded dark tint in style.css */
+    /* navbar has a hard-coded tint in style.css */
     .navbar {
-      background: rgba(238, 238, 241, 0.92) !important;
-      border: 1px solid rgba(0, 0, 0, 0.06) !important;
+      background: hsla(240, 1%, 17%, 0.9) !important;
+      border: 1px solid hsla(0, 0%, 100%, 0.08) !important;
+    }
+
+    /* keep the long article titles clear of the floating navbar */
+    @media (min-width: 1250px) {
+      .main-content article { padding-top: 90px !important; }
+      .main-content .article-title { padding-right: 40px; }
     }
 
     /* scrollbars */
-    ::-webkit-scrollbar-track { background: #E3E3E7 !important; }
-    ::-webkit-scrollbar-thumb { background: #B0B0B8 !important; }
-    ::-webkit-scrollbar-button { background: #D6D6DC !important; }
+    ::-webkit-scrollbar-track { background: hsl(0, 0%, 16%) !important; }
+    ::-webkit-scrollbar-thumb { background: hsl(0, 0%, 30%) !important; }
+    ::-webkit-scrollbar-button { background: hsl(0, 0%, 20%) !important; }
 
-    .separator { background: rgba(0, 0, 0, 0.08) !important; }
+    .separator { background: hsla(0, 0%, 100%, 0.12) !important; }
 
-    .sidebar, .main-content article, .navbar {
-      border-color: rgba(0, 0, 0, 0.08) !important;
+    .sidebar, .main-content article {
+      border-color: hsla(0, 0%, 100%, 0.12) !important;
+    }
+
+    /* availability line under the name */
+    .info-content .seeking-tag {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 5px 14px;
+      font-size: 12.5px;
+      font-weight: 500;
+      color: #E8A79E;
+      background: rgba(232, 167, 158, 0.14);
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .info-content .seeking-note {
+      margin-top: 10px;
+      max-width: 240px;
+      font-size: 13px;
+      line-height: 1.55;
+      color: var(--light-gray-70);
+    }
+
+    @media (max-width: 580px) {
+      .info-content .seeking-note { max-width: 100%; }
     }
   </style>
 
@@ -111,6 +141,12 @@
 
         <div class="info-content">
           <h1 class="name" title="Mutiara Anjeli Aldrin">Mutiara Anjeli Aldrin</h1>
+
+          <p class="seeking-tag">Industrial Engineering Graduate</p>
+
+          <p class="seeking-note">
+            Seeking roles in supply chain, PPIC &amp; continuous improvement
+          </p>
         </div>
 
         <button class="info_more-btn" data-sidebar-btn>
@@ -253,7 +289,7 @@
           <p>
             I'm an Industrial Engineering graduate from Universitas Sebelas Maret (GPA 3.53/4.00),
             with hands-on experience in manufacturing, process analysis, and project management gained
-            through industrial internships, a laboratory assistantship, and student organizations.
+            through industrial internships, a laboratory assistant role, and student organizations.
           </p>
 
           <p>
@@ -290,9 +326,9 @@
 
             .competency-card {
               padding: 22px;
-              border: 1px solid rgba(0, 0, 0, 0.08);
+              border: 1px solid hsla(0, 0%, 100%, 0.12);
               border-radius: 16px;
-              background: #EFEFF1;
+              background: hsl(240, 2%, 15%);
             }
 
             .competency-icon {
@@ -306,9 +342,9 @@
               margin-bottom: 16px;
             }
 
-            .competency-icon.green { background: rgba(45, 122, 90, 0.12); color: hsl(155, 47%, 32%); }
-            .competency-icon.blue { background: rgba(40, 100, 170, 0.12); color: hsl(212, 62%, 42%); }
-            .competency-icon.purple { background: rgba(120, 70, 190, 0.12); color: hsl(265, 45%, 47%); }
+            .competency-icon.green { background: hsla(150, 60%, 55%, 0.15); color: hsl(150, 60%, 55%); }
+            .competency-icon.blue { background: hsla(210, 90%, 65%, 0.15); color: hsl(210, 90%, 65%); }
+            .competency-icon.purple { background: hsla(265, 70%, 65%, 0.15); color: hsl(265, 70%, 65%); }
 
             .competency-card h4 {
               font-size: var(--fs-5, 16px);
@@ -326,7 +362,7 @@
               padding: 6px 12px;
               font-size: 12.5px;
               color: var(--light-gray-70);
-              border: 1px solid rgba(0, 0, 0, 0.08);
+              border: 1px solid hsla(0, 0%, 100%, 0.12);
               border-radius: 8px;
             }
           </style>
@@ -400,9 +436,9 @@
             .edu-card {
               position: relative;
               padding: 24px;
-              border: 1px solid rgba(0, 0, 0, 0.08);
+              border: 1px solid hsla(0, 0%, 100%, 0.12);
               border-radius: 16px;
-              background: #EFEFF1;
+              background: hsl(240, 2%, 15%);
               margin-top: 20px;
             }
 
@@ -419,9 +455,9 @@
               display: flex;
               align-items: center;
               justify-content: center;
-              background: rgba(45, 122, 90, 0.12);
+              background: hsla(150, 60%, 55%, 0.15);
               border-radius: 12px;
-              color: hsl(155, 47%, 32%);
+              color: hsl(150, 60%, 55%);
               font-size: 24px;
             }
 
@@ -430,7 +466,7 @@
               align-items: center;
               gap: 6px;
               padding: 6px 14px;
-              border: 1px solid rgba(0, 0, 0, 0.08);
+              border: 1px solid hsla(0, 0%, 100%, 0.12);
               border-radius: 20px;
               font-size: 13px;
               color: var(--light-gray-70);
@@ -440,7 +476,7 @@
               width: 7px;
               height: 7px;
               border-radius: 50%;
-              background: hsl(155, 47%, 38%);
+              background: hsl(150, 60%, 55%);
               display: inline-block;
             }
 
@@ -451,7 +487,7 @@
             }
 
             .edu-card .edu-major {
-              color: hsl(155, 47%, 32%);
+              color: hsl(150, 60%, 55%);
               font-weight: 500;
               margin-bottom: 4px;
             }
@@ -467,7 +503,7 @@
 
             .edu-divider {
               height: 1px;
-              background: rgba(0, 0, 0, 0.08);
+              background: hsla(0, 0%, 100%, 0.1);
               margin-bottom: 16px;
             }
 
@@ -484,7 +520,7 @@
 
             .edu-card .edu-thesis-text {
               font-size: var(--fs-6);
-              color: var(--light-gray, #6B4A44);
+              color: var(--light-gray, #d1d1d1);
               font-style: italic;
               line-height: 1.6;
             }
@@ -724,9 +760,9 @@
             scroll-snap-align: center;
             display: flex;
             flex-direction: column;
-            border: 1px solid rgba(0, 0, 0, 0.08);
+            border: 1px solid hsla(0, 0%, 100%, 0.12);
             border-radius: 18px;
-            background: #EFEFF1;
+            background: hsl(240, 2%, 15%);
             overflow: hidden;
           }
 
@@ -738,7 +774,7 @@
             position: relative;
             height: 190px;
             margin: 0;
-            background: linear-gradient(to bottom right, #E4E4E9, #D6D6DD);
+            background: linear-gradient(to bottom right, hsl(240, 1%, 25%), hsl(0, 0%, 17%));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -755,8 +791,8 @@
 
           .pj-figure .pj-placeholder {
             font-size: 54px;
-            color: #B85C57;
-            opacity: 0.55;
+            color: #E8A79E;
+            opacity: 0.5;
           }
 
           .pj-badge {
@@ -767,8 +803,8 @@
             font-size: 11.5px;
             font-weight: 500;
             letter-spacing: 0.3px;
-            color: #F5F5F7;
-            background: #B85C57;
+            color: hsl(240, 2%, 12%);
+            background: #E8A79E;
             border-radius: 20px;
           }
 
@@ -789,7 +825,7 @@
           .pj-org {
             font-size: 13.5px;
             font-weight: 500;
-            color: #B85C57;
+            color: #E8A79E;
             margin-bottom: 12px;
           }
 
@@ -806,7 +842,7 @@
             gap: 8px;
             margin-top: 18px;
             padding-top: 16px;
-            border-top: 1px solid rgba(0, 0, 0, 0.07);
+            border-top: 1px solid hsla(0, 0%, 100%, 0.1);
           }
 
           .pj-link {
@@ -816,21 +852,21 @@
             margin-top: 16px;
             font-size: var(--fs-6, 14px);
             font-weight: 600;
-            color: #B85C57;
+            color: #E8A79E;
             text-decoration: none;
           }
 
           .pj-link ion-icon { font-size: 16px; }
 
-          .pj-link:hover { color: #8F413D; }
+          .pj-link:hover { color: #F3C4BC; }
 
           .pj-tags span {
             padding: 6px 12px;
             font-size: 12px;
             color: var(--light-gray-70);
-            border: 1px solid rgba(0, 0, 0, 0.1);
+            border: 1px solid hsla(0, 0%, 100%, 0.1);
             border-radius: 8px;
-            background: #F6F6F8;
+            background: hsl(240, 2%, 17%);
           }
 
           .pj-controls {
@@ -847,18 +883,18 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid rgba(0, 0, 0, 0.1);
+            border: 1px solid hsla(0, 0%, 100%, 0.1);
             border-radius: 50%;
-            background: #EFEFF1;
-            color: #B85C57;
+            background: hsl(240, 2%, 18%);
+            color: #E8A79E;
             font-size: 20px;
             cursor: pointer;
             transition: 0.2s ease;
           }
 
-          .pj-nav:hover { background: #B85C57; color: #FFF5F2; }
+          .pj-nav:hover { background: #E8A79E; color: hsl(240, 2%, 12%); }
           .pj-nav:disabled { opacity: 0.35; cursor: default; }
-          .pj-nav:disabled:hover { background: #EFEFF1; color: #B85C57; }
+          .pj-nav:disabled:hover { background: hsl(240, 2%, 18%); color: #E8A79E; }
 
           .pj-dots {
             display: flex;
@@ -872,7 +908,7 @@
             padding: 0;
             border: none;
             border-radius: 50%;
-            background: rgba(0, 0, 0, 0.18);
+            background: hsla(0, 0%, 100%, 0.25);
             cursor: pointer;
             transition: 0.2s ease;
           }
@@ -880,7 +916,7 @@
           .pj-dots button.active {
             width: 22px;
             border-radius: 4px;
-            background: #B85C57;
+            background: #E8A79E;
           }
         </style>
 
@@ -1051,9 +1087,9 @@
             align-items: center;
             gap: 14px;
             padding: 16px;
-            border: 1px solid rgba(0, 0, 0, 0.08);
+            border: 1px solid hsla(0, 0%, 100%, 0.12);
             border-radius: 14px;
-            background: #EFEFF1;
+            background: hsl(240, 2%, 15%);
           }
 
           .cert-badge {
@@ -1063,7 +1099,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(184, 92, 87, 0.12);
+            background: rgba(232, 167, 158, 0.16);
             border-radius: 10px;
             color: var(--orange-yellow-crayola);
             font-size: 20px;
@@ -1191,9 +1227,9 @@
             align-items: flex-start;
             gap: 14px;
             padding: 32px;
-            border: 1px solid rgba(0, 0, 0, 0.08);
+            border: 1px solid hsla(0, 0%, 100%, 0.12);
             border-radius: 16px;
-            background: #F3F3F5;
+            background: hsl(240, 2%, 18%);
             margin-top: 20px;
           }
 
@@ -1223,7 +1259,7 @@
             margin-top: 4px;
           }
 
-          .cv-download-btn:hover { background: #A8524D; }
+          .cv-download-btn:hover { background: #D68E84; }
 
           .cv-download-btn ion-icon {
             font-size: 18px;
