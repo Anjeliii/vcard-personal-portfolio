@@ -31,18 +31,18 @@
   -->
   <style>
     :root {
-      /* surfaces */
+      /* surfaces - neutral gray panels on a soft pink page */
       --smoky-black: #FCD5CE;
-      --eerie-black-1: #FFF3F0;
-      --eerie-black-2: #FDE8E3;
-      --onyx: #FBE3DD;
-      --jet: #EFC3BA;
+      --eerie-black-1: #EFEFF1;
+      --eerie-black-2: #E9E9EC;
+      --onyx: #E3E3E7;
+      --jet: #D2D2D8;
 
       /* text */
-      --white-1: #4A2F2A;
-      --white-2: #3B2320;
-      --light-gray: #6B4A44;
-      --light-gray-70: rgba(107, 74, 68, 0.8);
+      --white-1: #2E2E33;
+      --white-2: #26262A;
+      --light-gray: #55555E;
+      --light-gray-70: rgba(85, 85, 94, 0.85);
 
       /* accent */
       --orange-yellow-crayola: #B85C57;
@@ -50,18 +50,18 @@
       --bittersweet-shimmer: #A8524D;
 
       /* gradients */
-      --bg-gradient-onyx: linear-gradient(to bottom right, #FFF5F2 3%, #FBE0DA 97%);
-      --bg-gradient-jet: linear-gradient(to bottom right, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 59.86%);
-      --bg-gradient-yellow-1: linear-gradient(to bottom right, #E8A29B 0%, rgba(232, 162, 155, 0) 50%);
-      --bg-gradient-yellow-2: linear-gradient(135deg, rgba(184, 92, 87, 0.25) 0%, rgba(184, 92, 87, 0) 59.86%);
-      --border-gradient-onyx: linear-gradient(to bottom right, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0) 50%);
-      --text-gradient-yellow: linear-gradient(to right, #B85C57, #D98C7A);
+      --bg-gradient-onyx: linear-gradient(to bottom right, #F4F4F6 3%, #E2E2E7 97%);
+      --bg-gradient-jet: linear-gradient(to bottom right, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 59.86%);
+      --bg-gradient-yellow-1: linear-gradient(to bottom right, #C97C77 0%, rgba(201, 124, 119, 0) 50%);
+      --bg-gradient-yellow-2: linear-gradient(135deg, rgba(184, 92, 87, 0.22) 0%, rgba(184, 92, 87, 0) 59.86%);
+      --border-gradient-onyx: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 50%);
+      --text-gradient-yellow: linear-gradient(to right, #B85C57, #C98A80);
 
-      --shadow-1: 0 8px 20px rgba(140, 80, 70, 0.12);
-      --shadow-2: 0 10px 24px rgba(140, 80, 70, 0.14);
-      --shadow-3: 0 12px 28px rgba(140, 80, 70, 0.14);
-      --shadow-4: 0 14px 32px rgba(140, 80, 70, 0.16);
-      --shadow-5: 0 16px 36px rgba(140, 80, 70, 0.18);
+      --shadow-1: 0 8px 20px rgba(90, 70, 68, 0.12);
+      --shadow-2: 0 10px 24px rgba(90, 70, 68, 0.14);
+      --shadow-3: 0 12px 28px rgba(90, 70, 68, 0.14);
+      --shadow-4: 0 14px 32px rgba(90, 70, 68, 0.16);
+      --shadow-5: 0 16px 36px rgba(90, 70, 68, 0.18);
     }
 
     html, body {
@@ -71,14 +71,14 @@
 
     /* navbar has a hard-coded dark tint in style.css */
     .navbar {
-      background: rgba(255, 243, 240, 0.85) !important;
+      background: rgba(238, 238, 241, 0.92) !important;
       border: 1px solid rgba(0, 0, 0, 0.06) !important;
     }
 
     /* scrollbars */
-    ::-webkit-scrollbar-track { background: #FBE3DD !important; }
-    ::-webkit-scrollbar-thumb { background: #E0A79E !important; }
-    ::-webkit-scrollbar-button { background: #F6D2CA !important; }
+    ::-webkit-scrollbar-track { background: #E3E3E7 !important; }
+    ::-webkit-scrollbar-thumb { background: #B0B0B8 !important; }
+    ::-webkit-scrollbar-button { background: #D6D6DC !important; }
 
     .separator { background: rgba(0, 0, 0, 0.08) !important; }
 
@@ -292,7 +292,7 @@
               padding: 22px;
               border: 1px solid rgba(0, 0, 0, 0.08);
               border-radius: 16px;
-              background: #FFF3F0;
+              background: #EFEFF1;
             }
 
             .competency-icon {
@@ -402,7 +402,7 @@
               padding: 24px;
               border: 1px solid rgba(0, 0, 0, 0.08);
               border-radius: 16px;
-              background: #FFF3F0;
+              background: #EFEFF1;
               margin-top: 20px;
             }
 
@@ -726,7 +726,7 @@
             flex-direction: column;
             border: 1px solid rgba(0, 0, 0, 0.08);
             border-radius: 18px;
-            background: #FFF3F0;
+            background: #EFEFF1;
             overflow: hidden;
           }
 
@@ -738,7 +738,7 @@
             position: relative;
             height: 190px;
             margin: 0;
-            background: linear-gradient(to bottom right, #FBE0DA, #F6CFC7);
+            background: linear-gradient(to bottom right, #E4E4E9, #D6D6DD);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -746,6 +746,8 @@
           }
 
           .pj-figure img {
+            position: absolute;
+            inset: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -754,7 +756,7 @@
           .pj-figure .pj-placeholder {
             font-size: 54px;
             color: #B85C57;
-            opacity: 0.65;
+            opacity: 0.55;
           }
 
           .pj-badge {
@@ -765,7 +767,7 @@
             font-size: 11.5px;
             font-weight: 500;
             letter-spacing: 0.3px;
-            color: #FFF5F2;
+            color: #F5F5F7;
             background: #B85C57;
             border-radius: 20px;
           }
@@ -807,13 +809,28 @@
             border-top: 1px solid rgba(0, 0, 0, 0.07);
           }
 
+          .pj-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 16px;
+            font-size: var(--fs-6, 14px);
+            font-weight: 600;
+            color: #B85C57;
+            text-decoration: none;
+          }
+
+          .pj-link ion-icon { font-size: 16px; }
+
+          .pj-link:hover { color: #8F413D; }
+
           .pj-tags span {
             padding: 6px 12px;
             font-size: 12px;
             color: var(--light-gray-70);
             border: 1px solid rgba(0, 0, 0, 0.1);
             border-radius: 8px;
-            background: #FFF8F6;
+            background: #F6F6F8;
           }
 
           .pj-controls {
@@ -832,7 +849,7 @@
             justify-content: center;
             border: 1px solid rgba(0, 0, 0, 0.1);
             border-radius: 50%;
-            background: #FFF3F0;
+            background: #EFEFF1;
             color: #B85C57;
             font-size: 20px;
             cursor: pointer;
@@ -841,7 +858,7 @@
 
           .pj-nav:hover { background: #B85C57; color: #FFF5F2; }
           .pj-nav:disabled { opacity: 0.35; cursor: default; }
-          .pj-nav:disabled:hover { background: #FFF3F0; color: #B85C57; }
+          .pj-nav:disabled:hover { background: #EFEFF1; color: #B85C57; }
 
           .pj-dots {
             display: flex;
@@ -873,7 +890,8 @@
 
             <div class="pj-card">
               <figure class="pj-figure">
-                <img src="./assets/images/omh-chart.png" alt="Facility Layout Optimization" loading="lazy">
+                <ion-icon name="grid-outline" class="pj-placeholder"></ion-icon>
+                <img src="./assets/images/omh-chart.png" alt="Facility Layout Optimization" loading="lazy" onerror="this.remove()">
                 <span class="pj-badge">Course Project</span>
               </figure>
               <div class="pj-body">
@@ -891,12 +909,17 @@
                   <span>Rectilinear Method</span>
                   <span>Layout Design</span>
                 </div>
+                <a href="https://drive.google.com/file/d/1_5KAqOQ-FCbIcxpI6hDz-6Ox8onQPWxy/view?usp=sharing" target="_blank" rel="noopener" class="pj-link">
+                  <span>View Project</span>
+                  <ion-icon name="open-outline"></ion-icon>
+                </a>
               </div>
             </div>
 
             <div class="pj-card">
               <figure class="pj-figure">
-                <img src="./assets/images/abc-classification-chart.png" alt="Class-Based Storage Implementation" loading="lazy">
+                <ion-icon name="cube-outline" class="pj-placeholder"></ion-icon>
+                <img src="./assets/images/abc-classification-chart.png" alt="Class-Based Storage Implementation" loading="lazy" onerror="this.remove()">
                 <span class="pj-badge">Internship Project</span>
               </figure>
               <div class="pj-body">
@@ -913,6 +936,10 @@
                   <span>Class-Based Storage</span>
                   <span>FMEA</span>
                 </div>
+                <a href="https://drive.google.com/file/d/1wvlrc1b30U1qCza9G4xnLDB78gWdWCa6/view?usp=sharing" target="_blank" rel="noopener" class="pj-link">
+                  <span>View Project</span>
+                  <ion-icon name="open-outline"></ion-icon>
+                </a>
               </div>
             </div>
 
@@ -940,12 +967,17 @@
                   <span>Fishbone Diagram</span>
                   <span>TPM</span>
                 </div>
+                <a href="https://drive.google.com/file/d/1pnh0XZdshtSONswaRRkZDEQTw0J4giKh/view?usp=sharing" target="_blank" rel="noopener" class="pj-link">
+                  <span>View Project</span>
+                  <ion-icon name="open-outline"></ion-icon>
+                </a>
               </div>
             </div>
 
             <div class="pj-card">
               <figure class="pj-figure">
-                <img src="./assets/images/mooc-survey-chart.png" alt="Faculty Member Perception Towards Learning MOOCs" loading="lazy">
+                <ion-icon name="school-outline" class="pj-placeholder"></ion-icon>
+                <img src="./assets/images/mooc-survey-chart.png" alt="Faculty Perception Towards MOOCs" loading="lazy" onerror="this.remove()">
                 <span class="pj-badge">Research Project</span>
               </figure>
               <div class="pj-body">
@@ -963,6 +995,10 @@
                   <span>IBM SPSS</span>
                   <span>Survey Design</span>
                 </div>
+                <a href="https://jurnal.uns.ac.id/ictte/article/view/114525" target="_blank" rel="noopener" class="pj-link">
+                  <span>Read Publication</span>
+                  <ion-icon name="document-text-outline"></ion-icon>
+                </a>
               </div>
             </div>
 
@@ -1017,7 +1053,7 @@
             padding: 16px;
             border: 1px solid rgba(0, 0, 0, 0.08);
             border-radius: 14px;
-            background: #FFF3F0;
+            background: #EFEFF1;
           }
 
           .cert-badge {
@@ -1157,7 +1193,7 @@
             padding: 32px;
             border: 1px solid rgba(0, 0, 0, 0.08);
             border-radius: 16px;
-            background: #FFF6F3;
+            background: #F3F3F5;
             margin-top: 20px;
           }
 
@@ -1180,12 +1216,14 @@
             padding: 12px 24px;
             border-radius: 12px;
             background: var(--orange-yellow-crayola);
-            color: #FFF5F2;
+            color: #F5F5F7;
             font-weight: 600;
             font-size: var(--fs-6);
             text-decoration: none;
             margin-top: 4px;
           }
+
+          .cv-download-btn:hover { background: #A8524D; }
 
           .cv-download-btn ion-icon {
             font-size: 18px;
