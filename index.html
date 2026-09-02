@@ -74,8 +74,33 @@
       border: 1px solid hsla(0, 0%, 100%, 0.08) !important;
     }
 
+    /* full email address instead of an ellipsis */
+    .contact-item { overflow: visible !important; }
+
+    .contact-info {
+      min-width: 0;
+      max-width: 100% !important;
+      width: 100% !important;
+    }
+
+    .contact-link,
+    .contact-info address {
+      white-space: normal !important;
+      overflow: visible !important;
+      text-overflow: clip !important;
+      word-break: break-word;
+    }
+
     /* keep the long article titles clear of the floating navbar */
     @media (min-width: 1250px) {
+      /* wider and taller panels so the sidebar fits without scrolling */
+      main {
+        max-width: 1450px !important;
+        padding: 25px 0 !important;
+      }
+
+      .sidebar { top: 25px !important; }
+
       .main-content article { padding-top: 90px; }
       .main-content .article-title { padding-right: 40px; }
 
