@@ -79,6 +79,25 @@
       .main-content article { padding-top: 90px; }
       .main-content .article-title { padding-right: 40px; }
 
+      /* both panels stay put — only what's inside them moves */
+      .main-content {
+        position: sticky !important;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .main-content article {
+        flex: 1 1 auto;
+        min-height: 0;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+      }
+
+      .sidebar {
+        overflow-y: auto !important;
+        overscroll-behavior: contain;
+      }
+
       /* solid header bar docked to the top of the content card */
       .navbar {
         position: sticky !important;
@@ -913,37 +932,42 @@
             background: hsl(240, 2%, 17%);
           }
 
-          .pj-controls {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 16px;
-            margin-top: 18px;
+          .pj-viewport {
+            position: relative;
           }
 
           .pj-nav {
-            width: 40px;
-            height: 40px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 5;
+            width: 42px;
+            height: 42px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid hsla(0, 0%, 100%, 0.1);
+            border: 1px solid hsla(0, 0%, 100%, 0.15);
             border-radius: 50%;
             background: hsl(240, 2%, 18%);
+            box-shadow: 0 6px 18px hsla(0, 0%, 0%, 0.45);
             color: #E8A79E;
             font-size: 20px;
             cursor: pointer;
             transition: 0.2s ease;
           }
 
+          .pj-nav[data-pj-prev] { left: 10px; }
+          .pj-nav[data-pj-next] { right: 10px; }
+
           .pj-nav:hover { background: #E8A79E; color: hsl(240, 2%, 12%); }
-          .pj-nav:disabled { opacity: 0.35; cursor: default; }
-          .pj-nav:disabled:hover { background: hsl(240, 2%, 18%); color: #E8A79E; }
+          .pj-nav:disabled { opacity: 0; pointer-events: none; }
 
           .pj-dots {
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 8px;
+            margin-top: 18px;
           }
 
           .pj-dots button {
@@ -965,6 +989,8 @@
         </style>
 
         <div class="pj-wrap">
+
+          <div class="pj-viewport">
 
           <div class="pj-track" data-pj-track>
 
@@ -1089,11 +1115,14 @@
             <button class="pj-nav" data-pj-prev aria-label="Previous project">
               <ion-icon name="chevron-back-outline"></ion-icon>
             </button>
-            <div class="pj-dots" data-pj-dots></div>
             <button class="pj-nav" data-pj-next aria-label="Next project">
               <ion-icon name="chevron-forward-outline"></ion-icon>
             </button>
           </div>
+
+          </div>
+
+          <div class="pj-dots" data-pj-dots></div>
 
         </div>
 
@@ -1287,7 +1316,7 @@
 
 
   <!--
-    - keeps the sticky navbar from pushing the article cards down on desktop
+    - keeps the panels a fixed height on desktop so only their contents scroll
   -->
   <script>
     (function () {
@@ -1295,6 +1324,8 @@
       if (!nav) return;
 
       var articles = document.querySelectorAll('.main-content article');
+      var mainContent = document.querySelector('.main-content');
+      var sidebar = document.querySelector('.sidebar');
 
       function sync() {
         var desktop = window.innerWidth >= 1250;
@@ -1308,6 +1339,23 @@
           } else {
             articles[i].style.removeProperty('padding-top');
           }
+        }
+
+        if (!mainContent || !sidebar) return;
+
+        if (desktop) {
+          var offset = parseFloat(getComputedStyle(sidebar).top);
+          if (isNaN(offset)) offset = 60;
+
+          var boxHeight = 'calc(100vh - ' + (offset * 2) + 'px)';
+
+          mainContent.style.top = offset + 'px';
+          mainContent.style.height = boxHeight;
+          sidebar.style.setProperty('max-height', boxHeight, 'important');
+        } else {
+          mainContent.style.removeProperty('top');
+          mainContent.style.removeProperty('height');
+          sidebar.style.removeProperty('max-height');
         }
       }
 
