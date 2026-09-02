@@ -127,6 +127,33 @@
     ::-webkit-scrollbar-thumb { background: hsl(0, 0%, 30%) !important; }
     ::-webkit-scrollbar-button { background: hsl(0, 0%, 20%) !important; }
 
+    /* the panels scroll, but without a visible bar */
+    .main-content article,
+    .sidebar {
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .main-content article::-webkit-scrollbar,
+    .sidebar::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+      display: none;
+    }
+
+    @media (min-width: 1250px) {
+      html {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+
+      html::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+        display: none;
+      }
+    }
+
     .separator { background: hsla(0, 0%, 100%, 0.12) !important; }
 
     /* direct CV link in the navbar */
@@ -946,11 +973,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid hsla(0, 0%, 100%, 0.15);
+            border: none;
             border-radius: 50%;
-            background: hsl(240, 2%, 18%);
+            background: #E8A79E;
             box-shadow: 0 6px 18px hsla(0, 0%, 0%, 0.45);
-            color: #E8A79E;
+            color: hsl(240, 2%, 12%);
             font-size: 20px;
             cursor: pointer;
             transition: 0.2s ease;
@@ -959,7 +986,7 @@
           .pj-nav[data-pj-prev] { left: 10px; }
           .pj-nav[data-pj-next] { right: 10px; }
 
-          .pj-nav:hover { background: #E8A79E; color: hsl(240, 2%, 12%); }
+          .pj-nav:hover { background: #F3C4BC; transform: translateY(-50%) scale(1.06); }
           .pj-nav:disabled { opacity: 0; pointer-events: none; }
 
           .pj-dots {
