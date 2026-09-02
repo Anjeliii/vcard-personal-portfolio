@@ -123,9 +123,25 @@
       }
 
       .sidebar {
-        overflow-y: auto !important;
-        overscroll-behavior: contain;
+        overflow: hidden !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 25px !important;
       }
+
+      .sidebar-info { margin-bottom: 0 !important; }
+
+      .avatar-box img {
+        width: min(160px, 19vh) !important;
+        height: auto !important;
+      }
+
+      .contacts-list { gap: 2.2vh !important; }
+
+      .sidebar .separator { margin: 2.2vh 0 !important; }
+
+      .social-list { margin-top: 0 !important; }
 
       /* solid header bar docked to the top of the content card */
       .navbar {
@@ -1411,11 +1427,13 @@
           mainContent.style.top = offset + 'px';
           mainContent.style.height = boxHeight;
           sidebar.style.setProperty('top', offset + 'px', 'important');
+          sidebar.style.setProperty('height', boxHeight, 'important');
           sidebar.style.setProperty('max-height', boxHeight, 'important');
         } else {
           mainContent.style.removeProperty('top');
           mainContent.style.removeProperty('height');
           sidebar.style.removeProperty('top');
+          sidebar.style.removeProperty('height');
           sidebar.style.removeProperty('max-height');
         }
       }
