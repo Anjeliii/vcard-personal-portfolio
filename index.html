@@ -274,6 +274,40 @@
     .skill .skills-item:not(:last-child) { margin-bottom: 16px !important; }
 
     .skill .skills-item .h5 { margin: 0 !important; }
+
+    /* the header bar and the panel below it must be exactly the same box,
+       otherwise pages with more content (Resume) render a narrower card */
+    @media (min-width: 1250px) {
+      .main-content {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+
+      .main-content > .navbar,
+      .main-content > article {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        align-self: stretch !important;
+        box-sizing: border-box !important;
+      }
+
+      /* one continuous card: rounded top on the navbar, rounded bottom here */
+      .main-content > article {
+        border-top-left-radius: 0 !important;
+        border-top-right-radius: 0 !important;
+        border-bottom-left-radius: 20px !important;
+        border-bottom-right-radius: 20px !important;
+      }
+
+      /* equal inner gutters on every page */
+      .main-content > article {
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+      }
+    }
   </style>
 
 </head>
@@ -423,7 +457,7 @@
           </li>
 
           <li class="navbar-item">
-            <a href="https://drive.google.com/file/d/1WM38qS9pna6ATqe1nT5EeAqqrvWG-9MS/view?usp=sharing"
+            <a href="https://drive.google.com/file/d/1NahF3UDcNone-gGum48hldMJ2F06iM0K/view?usp=sharing"
                target="_blank" rel="noopener" class="navbar-link navbar-cv">
               <ion-icon name="download-outline"></ion-icon>
               <span>Download CV</span>
