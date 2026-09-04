@@ -247,6 +247,33 @@
     @media (max-width: 580px) {
       .info-content .seeking-note { max-width: 100%; }
     }
+
+    /* My Skills & Languages: full width with even padding, so they line up
+       with the Education card and the timeline sections above */
+    .skill { margin-bottom: 30px; }
+
+    .skill .skills-title { margin-bottom: 20px !important; }
+
+    .skill .skills-list.content-card {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 24px !important;
+      box-sizing: border-box !important;
+      background: hsl(240, 2%, 15%) !important;
+      border: 1px solid hsla(0, 0%, 100%, 0.12) !important;
+      border-radius: 16px !important;
+      box-shadow: none !important;
+    }
+
+    /* drop the template's gradient overlay on these cards */
+    .skill .skills-list.content-card::before { display: none !important; }
+
+    .skill .skills-item { width: 100%; }
+
+    .skill .skills-item:not(:last-child) { margin-bottom: 16px !important; }
+
+    .skill .skills-item .h5 { margin: 0 !important; }
   </style>
 
 </head>
@@ -396,7 +423,7 @@
           </li>
 
           <li class="navbar-item">
-            <a href="https://drive.google.com/file/d/1B6M3RSGxi45FOZRZWLSsoJTtW3MBE_zk/view?usp=sharing"
+            <a href="https://drive.google.com/file/d/1WM38qS9pna6ATqe1nT5EeAqqrvWG-9MS/view?usp=sharing"
                target="_blank" rel="noopener" class="navbar-link navbar-cv">
               <ion-icon name="download-outline"></ion-icon>
               <span>Download CV</span>
